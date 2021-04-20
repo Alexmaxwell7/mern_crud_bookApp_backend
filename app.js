@@ -1,7 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
-const url = 'mongodb://localhost/BookDB'
+const url = 'mongodb://localhost/UsersDB'
 
 const app = express()
 
@@ -16,8 +16,8 @@ con.on('open', () => {
 
 app.use(express.json())
 
-const bookRouter = require('./routes/book')
-app.use('/book',bookRouter)
+const userRouter = require('./routes/users')
+app.use('/users',userRouter)
 
 app.listen(5000, () => {
     console.log('Server started')
